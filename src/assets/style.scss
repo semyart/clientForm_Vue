@@ -1,0 +1,169 @@
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin defaultInput {
+  margin-top: 5px;
+  padding: 4px 10px;
+  border: 1px solid #5b5b5b;
+  border-radius: 12px;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #a1dff7;
+}
+
+h1 {
+  margin: 0 0 15px;
+}
+
+h2 {
+  margin: 0 0 15px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  max-width: 91vw;
+  width: 610px;
+}
+
+.attribute-container {
+
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #dadce0;
+  margin-top: 12px;
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .label-radio {
+    margin-right: 15px;
+    margin-bottom: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .radio-container {
+    display: flex;
+    margin-top: 5px;
+  }
+
+  .input {
+    @include defaultInput;
+
+    &::placeholder {
+      color: rgba(black, 0.35);
+    }
+
+    &-tel::placeholder {
+      color: black;
+    }
+
+    &_invalid {
+      border-color: red;
+    }
+
+    &:focus {
+      outline: 2px solid #a1dff7;
+    }
+
+    &:hover:not(:focus) {
+      transition: background-color .3s ease-in-out;
+      background-color: #ebebeb;
+    }
+  }
+
+  .input-radio {
+    margin-right: 4px;
+    margin-top: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .select {
+    @include defaultInput;
+
+    &:focus {
+      outline: 2px solid #a1dff7;
+    }
+
+    &:hover:not(:focus) {
+      transition: background-color .3s ease-in-out;
+      background-color: #ebebeb;
+    }
+
+    &_invalid {
+      border-color: red;
+    }
+  }
+
+  .multiple-select {
+    overflow-y: auto;
+    height: 76px;
+  }
+
+  .label-placeholder {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .input-placeholder {
+    margin-left: 10px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .error-text {
+    margin-top: 2px;
+    margin-left: 12px;
+    color: red;
+    font-size: 12px;
+  }
+}
+
+.btn-submit {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 20px;
+
+  &:hover {
+    transition: background-color .3s ease-in-out;
+    background-color: #c1e8f7;
+  }
+}
+
+.logo-link {
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+
+  .logo-img {
+    height: 35px;
+  }
+
+  .logo-text {
+    color: white;
+    margin-bottom: -8px;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Istok Web', sans-serif;
+  }
+}
